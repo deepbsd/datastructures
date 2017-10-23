@@ -44,3 +44,4 @@ exports.allocate = allocate;
 exports.free = free;
 exports.copy = copy;
 exports.get = get;
+exports.set = set;
