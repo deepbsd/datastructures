@@ -41,11 +41,13 @@ class dblLinkedList {
     }
     
     get(index) {
+        
+        console.log(this);
         if (index < 0 || index >= this.length) {
             throw new Error('Index error');
         }
-
-        return this._find(index).value;
+        
+        return this._find(index)
     }
     remove(index) {
         if (index < 0 || index >= this.length) {

@@ -1,6 +1,6 @@
 import memory from './memory';
 
-class Array {
+export default class Array {
     constructor() {
         this.length = 0;
         this.ptr = memory.allocate(this.length);
@@ -63,3 +63,4 @@ Array.SIZE_RATIO = 3;
 
 
 module.exports = Array;
+
