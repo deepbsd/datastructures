@@ -12,9 +12,21 @@ function arrayProducts(arr){
     return newArr
 }
 
+function arrayProducts1(arr){
+    let newArr = []
+    let product = 1
+    for (let n=0; n<arr.length; n++){
+        product = product*arr[n]
+    }
+    for (let m=0; m<arr.length; m++){
+        newArr.push(product/arr[m])
+    }
+    return newArr
+}
 
 arr2 = [1,2,3,4,5]
-arr1 = [10, 20, 30, 40]
+arr3 = [10, 20, 30, 40]
+arr1 = [1,3,9,4]
 
 
-console.log("array: ",arr1, " product: ", arr1.reduce( (a,b)=> a*b ), "  array: ", arrayProducts(arr1))
+console.log("array: ",arr1, " product: ", arr1.reduce( (a,b) => a*b ), "  array: ", arrayProducts1(arr1))
