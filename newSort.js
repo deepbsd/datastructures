@@ -21,7 +21,7 @@ function newSort(arr1, arr2){
         else{
           newArr.push(arr1[l_ptr++])
         } 
-        console.log("newArr: ", newArr)
+        //console.log("newArr: ", newArr)
     }
    return newArr
 }
