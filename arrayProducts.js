@@ -24,6 +24,7 @@ function arrayProducts1(arr){
     return newArr
 }
 
+
 arr2 = [1,2,3,4,5]
 arr3 = [10, 20, 30, 40]
 arr1 = [1,3,9,4]

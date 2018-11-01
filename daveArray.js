@@ -30,20 +30,42 @@ class Array {
         return memory.get(this.ptr + index);
     }
 
-    insert(ptr, value){
+    insert(index, value){
+        if (index < 0 || index > this.length){
+            throw new Error("Index Error!");
+        }
+
+        if (this.size>this.length){ memory.allocate(this.size * SIZE_RATIO) }
+
+        memory.copy(this.ptr, this.size+1, this.ptr.length);
+        memory.set(this.index, value);
 
     }
 
     pop(){
+        if (this.length = 0){
+            throw new Error("Nothing left in memory!");
+        }
+
+        let value = memory.get(this.ptr+this.length-1);
+        this.length--;
+        return value;
+    }
+
+
+
+    remove(index){
+        if (index<0 || index>this.length){
+            throw new Error("Index Error!");
+        }
+        memory.free(this.index);
+        memory.copy(this.index+1, this.length-1, this.length-this.index+1);
+        this.length--;
 
     }
 
 
-    remove(ptr){
-
-    }
-
-
+    Array.SIZE_RATIO = 3;
 }
 
 
