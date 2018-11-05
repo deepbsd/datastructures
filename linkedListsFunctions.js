@@ -1,17 +1,6 @@
 // These are answers to some of the exercises from the linked list exercises
 
 
-//function findMiddle(linkedList){
-//   let count = 0;
-//   let node = linkedList.head;
-//   while (linkedList[count]!==null){
-//       node = linkedList[Math.floor(count/2)]
-//       count++;
-//   }
-//   return node;
-//}
-
-
 function findMiddle(linkedList){
     let node = linkedList.head;
     let count = 0;
@@ -71,8 +60,9 @@ function hasCycle(linkedList){
 
 function hasCycle1(linkedList){
     let node = linkedList.head;
-    let slow = node.next;
-    let fast = node;
+    if (node === null){ return false; }
+    let slow = node;
+    let fast = node.next;
     for (let i=0; i<linkedList.length; i++){
         if (slow === fast) { return true; }
         slow = slow.next;
