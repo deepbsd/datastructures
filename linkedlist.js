@@ -62,3 +62,13 @@ class LinkedList {
 }    
 
 module.exports = LinkedList;
+
+
+
+// Performance comparison to arrays:  arrays access memory in contiguous chunks, so memory caches work better for arrays
+// but linkedlists do not have to use index numbers to access memory locations.  But they do have to cycle through from 
+// beginning to find the required memory value.  Also, because more memory must be loaded into cache, linked lists will
+// require more memory usage than arrays.  
+
+
+
