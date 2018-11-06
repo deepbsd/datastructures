@@ -105,11 +105,14 @@ function hasCycle1(linkedList){
     let node = linkedList.head;
     if (node === null){ return false; }
     let slow = node;
-    let fast = node.next;
-    for (let i=0; i<linkedList.length; i++){
-        if (slow === fast) { return true; }
+    let fast = node;
+    for (let i=0; i<linkedList.length-3; i++){
+        if ((i !== 0) && (slow === fast)) { return true; }
         slow = slow.next;
-        fast = fast.next.next;
+        try {
+          fast = fast.next.next;
+        }
+        catch (error){console.log("Whoopsie!  ",error); }
     }
     return false;
 }
