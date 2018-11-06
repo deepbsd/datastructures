@@ -56,18 +56,24 @@ function find3rdFromEnd1(list){
 }
 
 function reverseLinkedList(linkedList){
-    let prevptr = null, currptr = linkedList.head; 
+    let prevptr = null; 
+    let currptr = linkedList.head; 
     let nextptr = currptr.next;
     
-    while (currptr !== null){
+    while (currptr !== null && nextptr !== null){
         // step 1 is to increment the three pointers, to 
         // move them to the right so to speak
-        prevptr = currptr; nextptr = currptr.next.next; currptr = currptr.next;
+        prevptr = currptr; 
+        nextptr = currptr.next.next; 
+        currptr = currptr.next;
 
         // step 2 is to make the pointers "rotate" so the next becomes
         // the previous and so on
-        currptr.next = null; nextptr.next = currptr; 
+        nextptr.next = nextptr; 
+        currptr.next = currptr; 
     }
+    
+
     linkedList.head = currptr;
     return linkedList;
 }
