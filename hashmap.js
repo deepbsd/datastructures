@@ -15,15 +15,6 @@ class HashMap {
         return hash >>> 0;
     }
 
-//    static _hashString(string) {
-//        let hash = 5381;
-//        for (let i=0; i<string.length; i++) {
-//            hash = (hash << 5) + hash + string.charCodeAt(i);
-//            hash = hash & hash;
-//        }
-//        return hash >>> 0;
-//    }
-
     get(key) {
         const index = this._findSlot(key);
         if (this._slots[index] === undefined) {
