@@ -38,6 +38,14 @@ function *permute(a, n = a.length) {
   }
 }
 
+
+function* testGenerator(){
+  let arr = ['a','b','c','d'];
+  while (true) {
+    yield arr.pop() || Math.round(Math.random()*100);
+  }
+}
+
 console.log(Array.from(permute("xyz".split(''))).map(perm => perm.join('')));
 
-module.exports = { palindrome, containsPalindrome, permute }
+module.exports = { palindrome, containsPalindrome, permute, testGenerator }
