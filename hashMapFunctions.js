@@ -40,12 +40,40 @@ function *permute(a, n = a.length) {
 
 
 function* testGenerator(){
-  let arr = ['a','b','c','d'];
+  let arr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  let str = '';
+  let result = [];
+  let myStr = '';
+  function makeStr(){
+      for (let i=0; i<3; i++){
+          str += arr[Math.round(Math.random()*arr.length)];
+      }
+      str = str.slice(str.length-3,str.length);
+      return str;
+  }
+  for (let n=0; n<20; n++){
+      myStr = makeStr();
+      result.push(myStr);
+  }
   while (true) {
-    yield arr.pop() || Math.round(Math.random()*100);
+      //yield Array.from(permute(str.split(''))).map(perm => perm.join(''));
+      //str = result.pop()
+      //yield  str = result.pop() &&  containsPalindrome(str);
+      yield result + '  ' + result.pop() + ': '+ containsPalindrome(result.pop())
   }
 }
 
 console.log(Array.from(permute("xyz".split(''))).map(perm => perm.join('')));
 
-module.exports = { palindrome, containsPalindrome, permute, testGenerator }
+// Typical hash function 
+function hashString(str){
+    let hash = 5381;
+    for (let i=0; i<str.length; i++){
+        hash = ( hash << 5 ) + hash + str.charCodeAt(i);
+        hash = hash & hash;
+    }
+    return hash >>> 0;
+}
+
+
+module.exports = { palindrome, containsPalindrome, permute, testGenerator, hashString }
