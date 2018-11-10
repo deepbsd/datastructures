@@ -14,4 +14,3 @@ class DumbMap {
     }
 }
 
-module.exports = { DumbMap }
