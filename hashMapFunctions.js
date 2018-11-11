@@ -61,10 +61,7 @@ function* testGenerator(){
       result.push(myStr);
   }
   while (true) {
-      //yield Array.from(permute(str.split(''))).map(perm => perm.join(''));
-      //str = result.pop()
-      //yield  str = result.pop() &&  containsPalindrome(str);
-      yield result + '  :--> '+ containsPalindrome(result.pop())
+      yield result + ' ]--> '+ containsPalindrome(result.pop())
   }
 }
 
