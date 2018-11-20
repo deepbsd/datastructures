@@ -28,14 +28,15 @@ function is_bst(tree, minimum, maximum) {
 	return true;
 }
 
-//Write an algorithm to find the third (or nth) largest value in a binary search tree
+//Write an algorithm to find the thirdlargest value in a binary search tree
 function nth_largest(tree, state) { 
 	//Finding the largest node means traversing the right first.
 	if (tree.right) {
 		nth_largest(tree.right, state);
 		if (state.result) return;
 	}
-	if (!--state.n) { 
+	//if (!--state.n) {   
+	if (--state.n<=0) {       // More idiomatic JS I think...
 		//Found it.
 		state.result = tree.key; 
 		return;
