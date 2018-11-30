@@ -1,4 +1,5 @@
 // new sort algorithm
+// Takes 2 arrays as parameters and returns a concatenated array that is itself sorted
 
 
 function newSort(arr1, arr2){

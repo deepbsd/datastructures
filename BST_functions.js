@@ -33,13 +33,13 @@ function nth_largest(tree, state) {
 	//Finding the largest node means traversing the right first.
 	if (tree.right) {
 		nth_largest(tree.right, state);
-		if (state.result) return;
+		if (state.result) return;  // return acts like a break statement here.
 	}
 	//if (!--state.n) {   
 	if (--state.n<=0) {       // More idiomatic JS I think...
 		//Found it.
 		state.result = tree.key; 
-		return;
+		return;   // return acts like a break statement here.
 	}
 	if (tree.left) nth_largest(tree.left, state);
 }
