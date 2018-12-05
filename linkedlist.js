@@ -4,7 +4,7 @@ class LinkedList {
         this.head = null;
     }
 
-     insert(index, value) {
+    insert(index, value) {
         if (index < 0 || index > this.length) {
             throw new Error('Index error');
         }
